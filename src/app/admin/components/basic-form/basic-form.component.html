@@ -1,14 +1,22 @@
 <p>
-  Name: {{ nameField.value }}
+  Name: {{ nameField.value }} {{ nameField.valid }}
 
   <input type="text" [formControl]="nameField" />
 
-  <button (click)="getNameValue()">Get Value</button>
+  <button [disabled]="nameField.invalid" (click)="getNameValue()">Get Value</button>
 
   <!-- <code>
     <pre> {{ nameField | json }} </pre>
   </code> -->
 
+</p>
+
+<p>
+  <strong *ngIf=" nameField.touched && nameField.hasError('required')">Este campo es Requerido</strong>
+</p>
+
+<p>
+  <strong *ngIf=" nameField.touched && nameField.hasError('maxlength')">Debe tener 10 caracteres max</strong>
 </p>
 
 
@@ -62,10 +70,9 @@
 </p>
 
 
-
 <p>
   Tags : {{ tagField.value}}
-  <select [formControl]="tagField" multiple size="8">
+  <select [formControl]="tagField" multiple size="7">
     <option value="100">Tags 1</option>
     <option value="200">Tags 2</option>
     <option value="300">Tags 3</option>
@@ -76,4 +83,42 @@
     <option value="800">Tags 8</option>
     <option value="900">Tags 9</option>
   </select>
+</p>
+
+
+<p>
+  Agree : {{ agreeField.value}}
+  <input type="checkbox" [formControl]="agreeField"/>
+</p>
+
+<p>
+   Gender : {{ genderField.value}}
+ <label>
+   <input name="gender" type="radio" value="Masculino" [formControl]="genderField"/>
+   Male
+ </label>
+ <label>
+  <input name="gender" type="radio" value="Femenino" [formControl]="genderField"/>
+  Female
+</label>
+<label>
+  <input name="gender" type="radio" value="Otro" [formControl]="genderField"/>
+  Other
+</label>
+</p>
+
+<p>
+  Zone : {{ zoneField.value}}
+<label>
+  <input name="zone" type="radio" value="Zoneino" [formControl]="zoneField"/>
+  Male
+</label>
+<label>
+ <input name="zone" type="radio" value="Femenino" [formControl]="genderField"/>
+ Female
+</label>
+<label>
+ <input name="zone" type="radio" value="Otro" [formControl]="genderField"/>
+ Other
+</label>
 </p>
