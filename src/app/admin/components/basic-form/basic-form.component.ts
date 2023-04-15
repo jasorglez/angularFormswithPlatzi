@@ -20,6 +20,9 @@ export class BasicFormComponent implements OnInit {
 
   ageField = new FormControl('12');
 
+  categoryField = new FormControl('03')
+
+  tagField = new FormControl('')
 
   constructor() { }
 

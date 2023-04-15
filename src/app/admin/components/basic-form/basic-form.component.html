@@ -50,3 +50,30 @@
  <input type="number" [formControl]="ageField" />
 
 </p>
+
+<p>
+  Category : {{ categoryField.value}}
+  <select [formControl]="categoryField" multiple size="3">
+    <option value="01">Category 1</option>
+    <option value="02">Category 2</option>
+    <option value="03">Category 3</option>
+    <option value="04">Category 4</option>
+  </select>
+</p>
+
+
+
+<p>
+  Tags : {{ tagField.value}}
+  <select [formControl]="tagField" multiple size="8">
+    <option value="100">Tags 1</option>
+    <option value="200">Tags 2</option>
+    <option value="300">Tags 3</option>
+    <option value="400">Tags 4</option>
+    <option value="500">Tags 5</option>
+    <option value="600">Tags 6</option>
+    <option value="700">Tags 7</option>
+    <option value="800">Tags 8</option>
+    <option value="900">Tags 9</option>
+  </select>
+</p>
